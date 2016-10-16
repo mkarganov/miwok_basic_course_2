@@ -3,6 +3,7 @@ package com.example.android.miwok;
 public class Word {
     private String mMiwokTranslation;
     private String mDefaultTranslation;
+    private int mAudioResId;
     private int mImageResourceId = NO_IMAGE_PROVIDED;
 
     private static final int NO_IMAGE_PROVIDED = -1;
@@ -13,9 +14,10 @@ public class Word {
      * @param miwokTranslation Miwok meaning
      * @param defaultTranslation English word
      */
-    public Word (String miwokTranslation, String defaultTranslation) {
+    public Word (String miwokTranslation, String defaultTranslation, int audioResId) {
         this.mMiwokTranslation = miwokTranslation;
         this.mDefaultTranslation = defaultTranslation;
+        this.mAudioResId = audioResId;
     }
 
     /**
@@ -24,10 +26,11 @@ public class Word {
      * @param defaultTranslation English word
      * @param imgResId resource id of related image
      */
-    public Word (String miwokTranslation, String defaultTranslation, int imgResId) {
+    public Word (String miwokTranslation, String defaultTranslation, int imgResId, int audioResId) {
         this.mMiwokTranslation = miwokTranslation;
         this.mDefaultTranslation = defaultTranslation;
         mImageResourceId = imgResId;
+        this.mAudioResId = audioResId;
     }
 
     public String getMiwokTranslation() {
@@ -41,6 +44,8 @@ public class Word {
     public int getImageResourceId() {
         return mImageResourceId;
     }
+
+    public int getmAudioResId() { return mAudioResId; }
 
     /* Checks if word has an image
      *
